@@ -8,8 +8,8 @@ namespace Amazed.Core
 {
     public partial class MapSpace
     {
-        private string value;
-        public string Value
+        private char value;
+        public char Value
         {
             get { return value; }
             set { this.value = value; }
