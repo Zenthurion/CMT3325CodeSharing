@@ -28,7 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 435);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(503, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(521, 435);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Enter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Game
             // 
@@ -36,12 +55,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(949, 467);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Name = "Game";
             this.Text = "Amazed";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

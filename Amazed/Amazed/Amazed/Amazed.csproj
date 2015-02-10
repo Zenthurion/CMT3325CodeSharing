@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Core\Constants.cs" />
     <Compile Include="Core\MapCharacters.cs" />
+    <Compile Include="Core\MapSpace.cs" />
     <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
