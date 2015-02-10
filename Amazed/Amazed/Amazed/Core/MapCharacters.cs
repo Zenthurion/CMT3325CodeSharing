@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public struct MapCharacters
+namespace Amazed.Core
 {
-    public const char Wall = '#';
-    public const char Player = 'o';
-    public const char HDoor = '—';
-    public const char VDoor = '|';
-    public const char Key = 'k';
-    public const char Exit = 'E';
+    public struct MapCharacters
+    {
+        public const char Wall = '#';
+        public const char Player = 'o';
+        public const char HDoor = '—';
+        public const char VDoor = '|';
+        public const char Key = 'k';
+        public const char Exit = 'E';
+    }
 }
