@@ -13,6 +13,6 @@ namespace Amazed.Core
         public const char HDoor = '—';
         public const char VDoor = '|';
         public const char Key = 'k';
-        public const char Exit = 'E';
+        public const char Exit = 'e';
     }
 }
