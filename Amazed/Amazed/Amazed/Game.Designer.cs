@@ -1,6 +1,6 @@
 ﻿namespace Amazed
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Game
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(949, 467);
+            this.Name = "Game";
+            this.Text = "Amazed";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
