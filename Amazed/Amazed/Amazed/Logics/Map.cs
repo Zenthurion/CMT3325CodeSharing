@@ -10,22 +10,32 @@ namespace Amazed.Logics
 {
     public class Map
     {
-        private MapSpace[,] grid = new MapSpace[25, 70];
+        private MapSpace[,] grid = new MapSpace[50, 38];
 
         public Map()
         {
 
             StreamReader fileStream = new StreamReader("Map.txt");
 
-            for (int y = 0; y < grid.GetLength(0); y++)
+            for (int y = 0; y < 38; y++)
             {
-                for (int x = 0; x < grid.GetLength(1); x++)
+                for (int x = 0; x < 50; x++)
                 {
 
-                    grid[y,x] = new MapSpace();
-                    grid[y, x].Value = (char)fileStream.Read();
-                    grid[y, x].IsVisited = true;
+                    char c = (char)fileStream.Read();
+                    if (c == '\r')
+                    {
+                        c = (char)fileStream.Read();
+                    }
 
+                    if (c == '\n')
+                    {
+                        c = (char)fileStream.Read();
+                    }
+
+                    grid[x, y] = new MapSpace();
+                    grid[x, y].Value = c;
+                    grid[x, y].IsVisited = true;
                 }
             }
         }
@@ -38,14 +48,13 @@ namespace Amazed.Logics
 
         public string[] GetMapLines()
         {
-            string[] lines = new string[grid.GetLength(0)];
+            string[] lines = new string[38];
 
-            for (int x = 0; x < grid.GetLength(1); x++)
+            for (int x = 0; x < 38; x++)
             {
-                var xy = grid.GetLength(0);
-                for (int y = 0; y < xy; y++)
+                for (int y = 0; y < 50; y++)
                 {
-                    lines[y] += grid[y, x].Value;
+                    lines[x] += grid[y, x].Value;
                 }
             }
 
