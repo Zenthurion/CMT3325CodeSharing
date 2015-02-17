@@ -13,7 +13,7 @@ namespace Amazed
         private char[,] map;
         private int x, y;
 
-        private bool hasKey = false;
+        private int keys = 0;
 
         public Player(int x, int y)
         {
@@ -22,14 +22,16 @@ namespace Amazed
         }
 
 
-        private bool CheckMove(char target)
+        private bool CheckMove(char target, int xAttempt, int yAttampt)
         {
             if (target != MapCharacters.Wall)
             {
                 if (target == MapCharacters.HDoor || target == MapCharacters.VDoor)
                 {
-                    if (hasKey)
+                    if (keys > 0)
                     {
+                        keys--;
+                        map[xAttempt, yAttampt] = MapCharacters.Path;
                         return true;
                     }
                 }
@@ -37,7 +39,8 @@ namespace Amazed
                 {
                     if (target == MapCharacters.Key)
                     {
-                        hasKey = true;
+                        keys++;
+                        map[xAttempt, yAttampt] = MapCharacters.Path;
                     }
                     else if (target == MapCharacters.Exit)
                     {
@@ -51,28 +54,28 @@ namespace Amazed
 
         public void MoveNorth()
         {
-            if (CheckMove(map[x, y + 1]))
+            if (CheckMove(map[x, y + 1], x, y + 1))
             {
                 y += 1;
             }
         }
         public void MoveEast()
         {
-            if (CheckMove(map[x + 1, y]))
+            if (CheckMove(map[x + 1, y], x + 1, y))
             {
                 x += 1;
             }
         }
         public void MoveWest()
         {
-            if (CheckMove(map[x - 1, y]))
+            if (CheckMove(map[x - 1, y], x - 1, y))
             {
                 x -= 1;
             }
         }
         public void MoveSouth()
         {
-            if (CheckMove(map[x, y - 1]))
+            if (CheckMove(map[x, y - 1], x, y - 1))
             {
                 y -= 1;
             }
