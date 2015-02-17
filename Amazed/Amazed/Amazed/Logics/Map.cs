@@ -1,6 +1,7 @@
 ﻿using Amazed.Core;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -46,15 +47,31 @@ namespace Amazed.Logics
             return grid;
         }
 
-        public string[] GetMapLines()
+        public string[] GetMapLines(int xP, int yP)
         {
+            
+
             string[] lines = new string[25];
 
             for (int x = 0; x < 25; x++)
             {
                 for (int y = 0; y < 50; y++)
                 {
-                    lines[x] += grid[y, x].Value;
+
+                    int dx = x - xP;
+                    int dy = y - yP;
+
+                    var distance = (dx*dx + dy*dy);
+
+
+                    if (distance < 8)
+                    {
+                        lines[x] += grid[y, x].Value;
+                    }
+                    else
+                    {
+                        lines[x] += ' ';
+                    }
                 }
             }
 
