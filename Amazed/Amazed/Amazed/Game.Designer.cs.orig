@@ -41,20 +41,18 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Location = new System.Drawing.Point(16, 15);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(12, 12);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(1089, 602);
+            this.textBox2.Size = new System.Drawing.Size(817, 489);
             this.textBox2.TabIndex = 2;
             // 
             // btnMoveSouth
             // 
-            this.btnMoveSouth.Location = new System.Drawing.Point(512, 618);
-            this.btnMoveSouth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMoveSouth.Location = new System.Drawing.Point(384, 502);
             this.btnMoveSouth.Name = "btnMoveSouth";
-            this.btnMoveSouth.Size = new System.Drawing.Size(100, 25);
+            this.btnMoveSouth.Size = new System.Drawing.Size(75, 20);
             this.btnMoveSouth.TabIndex = 3;
             this.btnMoveSouth.Text = "Move South";
             this.btnMoveSouth.UseVisualStyleBackColor = true;
@@ -62,10 +60,9 @@
             // 
             // btnMoveNorth
             // 
-            this.btnMoveNorth.Location = new System.Drawing.Point(512, 528);
-            this.btnMoveNorth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMoveNorth.Location = new System.Drawing.Point(384, 429);
             this.btnMoveNorth.Name = "btnMoveNorth";
-            this.btnMoveNorth.Size = new System.Drawing.Size(100, 25);
+            this.btnMoveNorth.Size = new System.Drawing.Size(75, 20);
             this.btnMoveNorth.TabIndex = 4;
             this.btnMoveNorth.Text = "Move North";
             this.btnMoveNorth.UseVisualStyleBackColor = true;
@@ -73,10 +70,9 @@
             // 
             // btnMoveWest
             // 
-            this.btnMoveWest.Location = new System.Drawing.Point(412, 572);
-            this.btnMoveWest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMoveWest.Location = new System.Drawing.Point(309, 465);
             this.btnMoveWest.Name = "btnMoveWest";
-            this.btnMoveWest.Size = new System.Drawing.Size(100, 25);
+            this.btnMoveWest.Size = new System.Drawing.Size(75, 20);
             this.btnMoveWest.TabIndex = 5;
             this.btnMoveWest.Text = "Move West";
             this.btnMoveWest.UseVisualStyleBackColor = true;
@@ -84,10 +80,9 @@
             // 
             // btnMoveEast
             // 
-            this.btnMoveEast.Location = new System.Drawing.Point(613, 572);
-            this.btnMoveEast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMoveEast.Location = new System.Drawing.Point(460, 465);
             this.btnMoveEast.Name = "btnMoveEast";
-            this.btnMoveEast.Size = new System.Drawing.Size(100, 25);
+            this.btnMoveEast.Size = new System.Drawing.Size(75, 20);
             this.btnMoveEast.TabIndex = 6;
             this.btnMoveEast.Text = "Move East";
             this.btnMoveEast.UseVisualStyleBackColor = true;
@@ -95,10 +90,10 @@
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1121, 665);
+            this.ClientSize = new System.Drawing.Size(841, 540);
             this.Controls.Add(this.btnMoveEast);
             this.Controls.Add(this.btnMoveWest);
             this.Controls.Add(this.btnMoveNorth);
