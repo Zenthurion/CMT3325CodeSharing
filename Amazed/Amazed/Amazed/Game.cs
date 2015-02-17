@@ -20,8 +20,7 @@ namespace Amazed
         {
             InitializeComponent();
             map = new Map();
-            textBox2.Lines = map.GetMapLines();
-
+            ReDraw();
         }
 
 
@@ -43,6 +42,12 @@ namespace Amazed
         private void btnMoveEast_Click(object sender, EventArgs e)
         {
             p1.MoveEast();
+        }
+
+
+        private void ReDraw()
+        {
+            textBox2.Lines = map.GetMapLines();
         }
     }
 }
