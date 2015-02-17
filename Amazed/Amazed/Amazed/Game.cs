@@ -22,6 +22,8 @@ namespace Amazed
             map = new Map();
             textBox2.Lines = map.GetMapLines();
 
+            p1 = new Player(this, 32, 24);
+
         }
 
 
@@ -44,5 +46,7 @@ namespace Amazed
         {
             p1.MoveEast();
         }
+
+
     }
 }
