@@ -10,14 +10,14 @@ namespace Amazed.Logics
 {
     public class Map
     {
-        private MapSpace[,] grid = new MapSpace[50, 38];
+        private MapSpace[,] grid = new MapSpace[50, 25];
 
         public Map()
         {
 
             StreamReader fileStream = new StreamReader("Map.txt");
 
-            for (int y = 0; y < 38; y++)
+            for (int y = 0; y < 25; y++)
             {
                 for (int x = 0; x < 50; x++)
                 {
@@ -48,9 +48,9 @@ namespace Amazed.Logics
 
         public string[] GetMapLines()
         {
-            string[] lines = new string[38];
+            string[] lines = new string[25];
 
-            for (int x = 0; x < 38; x++)
+            for (int x = 0; x < 25; x++)
             {
                 for (int y = 0; y < 50; y++)
                 {
