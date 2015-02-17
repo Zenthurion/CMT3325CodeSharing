@@ -18,3 +18,13 @@ C:\Users\Markus\Documents\GitHub\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Deb
 C:\Users\Markus\Documents\GitHub\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.Game.resources
 C:\Users\Markus\Documents\GitHub\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.Properties.Resources.resources
 C:\Users\Markus\Documents\GitHub\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.csproj.GenerateResource.Cache
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\bin\Debug\Amazed.exe.config
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.exe
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.pdb
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\bin\Debug\Map.txt
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\bin\Debug\Amazed.exe
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\bin\Debug\Amazed.pdb
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.csprojResolveAssemblyReference.cache
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.Game.resources
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.Properties.Resources.resources
+C:\Users\JS1660\Desktop\CMT3325CodeSharing\Amazed\Amazed\Amazed\obj\Debug\Amazed.csproj.GenerateResource.Cache

@@ -15,7 +15,7 @@ namespace Amazed
     public partial class Game : Form
     {
         Map map;
-
+        Player p1;
         public Game()
         {
             InitializeComponent();
@@ -24,9 +24,25 @@ namespace Amazed
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            p1.MoveNorth();
+        }
+
+        private void btnMoveSouth_Click(object sender, EventArgs e)
+        {
+            p1.MoveSouth();
+        }
+
+        private void btnMoveWest_Click(object sender, EventArgs e)
+        {
+            p1.MoveWest();
+        }
+
+        private void btnMoveEast_Click(object sender, EventArgs e)
+        {
+            p1.MoveEast();
         }
     }
 }
