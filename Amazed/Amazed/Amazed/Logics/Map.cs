@@ -10,7 +10,7 @@ namespace Amazed.Logics
 {
     public class Map
     {
-        private MapSpace[,] grid = new MapSpace[50, 25];
+        public MapSpace[,] grid = new MapSpace[50, 25];
 
         public Map()
         {

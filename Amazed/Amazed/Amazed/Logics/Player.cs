@@ -12,7 +12,7 @@ namespace Amazed
         private Game game;
         private char character = MapCharacters.Player;
         private char[,] map;
-        private int x, y;
+        public int x, y;
 
         private int keys = 0;
 
@@ -21,6 +21,14 @@ namespace Amazed
             this.game = game;
             this.x = x;
             this.y = y;
+        }
+
+        private void SetMap(int x, int y, char value)
+        {
+            game.map.grid[x, y].Value = value;
+            game.map.grid[x, y].IsVisited = true;
+
+            game.ReDraw();
         }
 
 
@@ -33,7 +41,7 @@ namespace Amazed
                     if (keys > 0)
                     {
                         keys--;
-                        map[xAttempt, yAttampt] = MapCharacters.Path;
+                        SetMap(xAttempt, yAttampt, MapCharacters.Path);
                         return true;
                     }
                 }
@@ -42,7 +50,7 @@ namespace Amazed
                     if (target == MapCharacters.Key)
                     {
                         keys++;
-                        map[xAttempt, yAttampt] = MapCharacters.Path;
+                        SetMap(xAttempt, yAttampt, MapCharacters.Path);
                     }
                     else if (target == MapCharacters.Exit)
                     {
@@ -56,31 +64,39 @@ namespace Amazed
 
         public void MoveNorth()
         {
-            if (CheckMove(map[x, y + 1], x, y + 1))
+            if (CheckMove(game.map.grid[x, y + 1].Value, x, y + 1))
             {
+                SetMap(x, y, MapCharacters.Path);
                 y += 1;
+                SetMap(x, y, MapCharacters.Player);
 
             }
         }
         public void MoveEast()
         {
-            if (CheckMove(map[x + 1, y], x + 1, y))
+            if (CheckMove(game.map.grid[x + 1, y].Value, x + 1, y))
             {
+                SetMap(x, y, MapCharacters.Path);
                 x += 1;
+                SetMap(x, y, MapCharacters.Player);
             }
         }
         public void MoveWest()
         {
-            if (CheckMove(map[x - 1, y], x - 1, y))
+            if (CheckMove(game.map.grid[x - 1, y].Value, x - 1, y))
             {
+                SetMap(x, y, MapCharacters.Path);
                 x -= 1;
+                SetMap(x, y, MapCharacters.Player);
             }
         }
         public void MoveSouth()
         {
-            if (CheckMove(map[x, y - 1], x, y - 1))
+            if (CheckMove(game.map.grid[x, y - 1].Value, x, y - 1))
             {
+                SetMap(x, y, MapCharacters.Path);
                 y -= 1;
+                SetMap(x, y, MapCharacters.Player);
             }
         }
 

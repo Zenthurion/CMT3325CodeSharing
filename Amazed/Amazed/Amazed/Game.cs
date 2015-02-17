@@ -14,8 +14,8 @@ namespace Amazed
 {
     public partial class Game : Form
     {
-        Map map;
-        Player p1;
+        public Map map;
+        public Player p1;
         public Game()
         {
             InitializeComponent();
@@ -47,9 +47,9 @@ namespace Amazed
         }
 
 
-        private void ReDraw()
+        public void ReDraw()
         {
-            textBox2.Lines = map.GetMapLines();
+            textBox2.Lines = map.GetMapLines(p1.x, p1.y);
         }
 
 
