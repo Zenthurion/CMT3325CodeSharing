@@ -35,7 +35,7 @@ namespace Amazed.Logics
 
                     grid[x, y] = new MapSpace();
                     grid[x, y].Value = c;
-                    grid[x, y].IsVisited = true;
+                    grid[x, y].IsVisited = false;
                 }
             }
         }
@@ -62,9 +62,10 @@ namespace Amazed.Logics
 
                     var distance = Math.Sqrt((dx * dx) + (dy * dy));
 
-                    if (distance < 8)
+                    if (distance < 4 || grid[x, y].IsVisited)
                     {
                         lines[y] += grid[x, y].Value;
+                        grid[x, y].IsVisited = true;
                     }
                     else
                     {
