@@ -10,8 +10,6 @@ namespace Amazed
     public class Player
     {
         private Game game;
-        private char character = MapCharacters.Player;
-        private char[,] map;
         public int x, y;
 
         private int keys = 0;
@@ -62,9 +60,9 @@ namespace Amazed
             return false;
         }
 
-        public void MoveNorth()
+        public void MoveSouth()
         {
-            if (CheckMove(game.map.grid[x, y + 1].Value, x, y + 1))
+            if (game.map.grid.GetLength(1) - 1 > y && CheckMove(game.map.grid[x, y + 1].Value, x, y + 1))
             {
                 SetMap(x, y, MapCharacters.Path);
                 y += 1;
@@ -74,7 +72,7 @@ namespace Amazed
         }
         public void MoveEast()
         {
-            if (CheckMove(game.map.grid[x + 1, y].Value, x + 1, y))
+            if (game.map.grid.GetLength(0) - 1 > x && CheckMove(game.map.grid[x + 1, y].Value, x + 1, y))
             {
                 SetMap(x, y, MapCharacters.Path);
                 x += 1;
@@ -83,16 +81,16 @@ namespace Amazed
         }
         public void MoveWest()
         {
-            if (CheckMove(game.map.grid[x - 1, y].Value, x - 1, y))
+            if (y > 0 && CheckMove(game.map.grid[x - 1, y].Value, x - 1, y))
             {
                 SetMap(x, y, MapCharacters.Path);
                 x -= 1;
                 SetMap(x, y, MapCharacters.Player);
             }
         }
-        public void MoveSouth()
+        public void MoveNorth()
         {
-            if (CheckMove(game.map.grid[x, y - 1].Value, x, y - 1))
+            if (y > 0 && CheckMove(game.map.grid[x, y - 1].Value, x, y - 1))
             {
                 SetMap(x, y, MapCharacters.Path);
                 y -= 1;

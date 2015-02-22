@@ -46,15 +46,30 @@ namespace Amazed.Logics
             return grid;
         }
 
-        public string[] GetMapLines()
+        public string[] GetMapLines(int xP, int yP)
         {
+
+
             string[] lines = new string[25];
 
-            for (int x = 0; x < 25; x++)
+            for (int y = 0; y < 25; y++)
             {
-                for (int y = 0; y < 50; y++)
+                for (int x = 0; x < 50; x++)
                 {
-                    lines[x] += grid[y, x].Value;
+
+                    int dx = xP - x;
+                    int dy = yP - y;
+
+                    var distance = Math.Sqrt((dx * dx) + (dy * dy));
+
+                    if (distance < 8)
+                    {
+                        lines[y] += grid[x, y].Value;
+                    }
+                    else
+                    {
+                        lines[y] += ' ';
+                    }
                 }
             }
 

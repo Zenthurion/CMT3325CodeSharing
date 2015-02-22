@@ -20,8 +20,8 @@ namespace Amazed
         {
             InitializeComponent();
             map = new Map();
-            ReDraw();
             p1 = new Player(this, 32, 24);
+            ReDraw();
 
         }
 
