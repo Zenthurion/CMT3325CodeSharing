@@ -56,20 +56,26 @@ namespace Amazed.Logics
             {
                 for (int x = 0; x < 50; x++)
                 {
-
                     int dx = xP - x;
                     int dy = yP - y;
 
-                    var distance = Math.Sqrt((dx * dx) + (dy * dy));
-
-                    if (distance < 4 || grid[x, y].IsVisited)
+                    if (dx == 0 && dy == 0)
                     {
-                        lines[y] += grid[x, y].Value;
-                        grid[x, y].IsVisited = true;
+                        lines[y] += MapCharacters.Player;
                     }
                     else
                     {
-                        lines[y] += ' ';
+                        var distance = Math.Sqrt((dx * dx) + (dy * dy));
+
+                        if (distance < 4 || grid[x, y].IsVisited)
+                        {
+                            lines[y] += grid[x, y].Value;
+                            grid[x, y].IsVisited = true;
+                        }
+                        else
+                        {
+                            lines[y] += MapCharacters.Path;
+                        }
                     }
                 }
             }

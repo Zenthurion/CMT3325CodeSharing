@@ -26,6 +26,7 @@ namespace Amazed
             game.map.grid[x, y].Value = value;
             game.map.grid[x, y].IsVisited = true;
 
+            game.keyLabel.Invoke(new Action(delegate() { game.keyLabel.Text = "k: " + keys; }));
             game.ReDraw();
         }
 
@@ -66,7 +67,7 @@ namespace Amazed
             {
                 SetMap(x, y, MapCharacters.Path);
                 y += 1;
-                SetMap(x, y, MapCharacters.Player);
+                //SetMap(x, y, MapCharacters.Player);
 
             }
         }
@@ -76,7 +77,7 @@ namespace Amazed
             {
                 SetMap(x, y, MapCharacters.Path);
                 x += 1;
-                SetMap(x, y, MapCharacters.Player);
+               // SetMap(x, y, MapCharacters.Player);
             }
         }
         public void MoveWest()
@@ -85,7 +86,7 @@ namespace Amazed
             {
                 SetMap(x, y, MapCharacters.Path);
                 x -= 1;
-                SetMap(x, y, MapCharacters.Player);
+                //SetMap(x, y, MapCharacters.Player);
             }
         }
         public void MoveNorth()
@@ -94,7 +95,7 @@ namespace Amazed
             {
                 SetMap(x, y, MapCharacters.Path);
                 y -= 1;
-                SetMap(x, y, MapCharacters.Player);
+                //SetMap(x, y, MapCharacters.Player);
             }
         }
 
