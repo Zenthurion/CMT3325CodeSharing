@@ -18,7 +18,7 @@ namespace Amazed
         }
 
         private static string[] soundPaths = new string[] { "Audio/pickup.wav", "Audio/open.wav", "Audio/win.wav" };
-        private static SoundPlayer[] soundPlayers = new SoundPlayer[] { new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1])}
+        private static SoundPlayer[] soundPlayers = new SoundPlayer[] { new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[0]), new SoundPlayer(soundPaths[2]) };
         private Game game;
         private SoundPlayer soundPlayer;
 
@@ -48,13 +48,13 @@ namespace Amazed
             switch (sound)
             {
                 case Sounds.Open:
-                    soundPlayer.Play();
+                    soundPlayers[1].Play();
                     break;
                 case Sounds.PickUp:
-
+                    soundPlayers[0].Play();
                     break;
                 case Sounds.Win:
-
+                    soundPlayers[2].Play();
                     break;
             }
         }
