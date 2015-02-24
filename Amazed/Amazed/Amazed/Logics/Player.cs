@@ -71,6 +71,7 @@ namespace Amazed
                     {
                         keys--;
                         SetMap(xAttempt, yAttampt, MapCharacters.Path);
+                        PlaySound(Sounds.Open);
                         return true;
                     }
                 }
@@ -80,10 +81,12 @@ namespace Amazed
                     {
                         keys++;
                         SetMap(xAttempt, yAttampt, MapCharacters.Path);
+                        PlaySound(Sounds.PickUp);
                     }
                     else if (target == MapCharacters.Exit)
                     {
                         game.GameOver();
+                        PlaySound(Sounds.Win);
                     }
                     return true;
                 }
