@@ -83,8 +83,7 @@ namespace Amazed
 
         public void GameOver()
         {
-            isPlaying = false;
-            textBox2.Invoke(new Action(delegate() { textBox2.Lines = map.GetGameOverLines(); }));
+            
         }
 
 
@@ -105,6 +104,7 @@ namespace Amazed
                 case Keys.W:
 
                 case Keys.Up:
+                    Console.WriteLine("Moving North");
                     movingNorth = true;
                     break;
                 case Keys.S:
