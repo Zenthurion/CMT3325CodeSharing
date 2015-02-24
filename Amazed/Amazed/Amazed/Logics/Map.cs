@@ -1,7 +1,6 @@
 ﻿using Amazed.Core;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,7 +10,7 @@ namespace Amazed.Logics
 {
     public class Map
     {
-        private MapSpace[,] grid = new MapSpace[50, 25];
+        public MapSpace[,] grid = new MapSpace[50, 25];
 
         public Map()
         {
@@ -36,7 +35,7 @@ namespace Amazed.Logics
 
                     grid[x, y] = new MapSpace();
                     grid[x, y].Value = c;
-                    grid[x, y].IsVisited = true;
+                    grid[x, y].IsVisited = false;
                 }
             }
         }
@@ -49,28 +48,34 @@ namespace Amazed.Logics
 
         public string[] GetMapLines(int xP, int yP)
         {
-            
+
 
             string[] lines = new string[25];
 
-            for (int x = 0; x < 25; x++)
+            for (int y = 0; y < 25; y++)
             {
-                for (int y = 0; y < 50; y++)
+                for (int x = 0; x < 50; x++)
                 {
+                    int dx = xP - x;
+                    int dy = yP - y;
 
-                    int dx = x - xP;
-                    int dy = y - yP;
-
-                    var distance = (dx*dx + dy*dy);
-
-
-                    if (distance < 8)
+                    if (dx == 0 && dy == 0)
                     {
-                        lines[x] += grid[y, x].Value;
+                        lines[y] += MapCharacters.Player;
                     }
                     else
                     {
-                        lines[x] += ' ';
+                        var distance = Math.Sqrt((dx * dx) + (dy * dy));
+
+                        if (distance < 4 || grid[x, y].IsVisited)
+                        {
+                            lines[y] += grid[x, y].Value;
+                            grid[x, y].IsVisited = true;
+                        }
+                        else
+                        {
+                            lines[y] += MapCharacters.Path;
+                        }
                     }
                 }
             }
