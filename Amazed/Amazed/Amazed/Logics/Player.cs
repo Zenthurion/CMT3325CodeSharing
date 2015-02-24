@@ -18,7 +18,7 @@ namespace Amazed
         }
 
         private static string[] soundPaths = new string[] { "Audio/pickup.wav", "Audio/open.wav", "Audio/win.wav" };
-        private static SoundPlayer[] soundPlayers = new SoundPlayer[] { new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1])}
+        private static SoundPlayer[] soundPlayers = new SoundPlayer[] { new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1]) };
         private Game game;
         private SoundPlayer soundPlayer;
 
