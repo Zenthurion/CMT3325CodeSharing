@@ -10,7 +10,8 @@ namespace Amazed.Logics
 {
     public class Map
     {
-        public MapSpace[,] grid = new MapSpace[50, 25];
+        public MapSpace[,] grid = new MapSpace[88, 25];
+        private MapSpace[,] gameOverGrid = new MapSpace[88, 25];
 
         public Map()
         {
@@ -19,7 +20,7 @@ namespace Amazed.Logics
 
             for (int y = 0; y < 25; y++)
             {
-                for (int x = 0; x < 50; x++)
+                for (int x = 0; x < 88; x++)
                 {
 
                     char c = (char)fileStream.Read();
@@ -54,7 +55,7 @@ namespace Amazed.Logics
 
             for (int y = 0; y < 25; y++)
             {
-                for (int x = 0; x < 50; x++)
+                for (int x = 0; x < 88; x++)
                 {
                     int dx = xP - x;
                     int dy = yP - y;
@@ -83,5 +84,44 @@ namespace Amazed.Logics
             return lines;
         }
 
+        public string[] GetGameOverLines()
+        {
+
+            StreamReader fileStream = new StreamReader("GameOver.txt");
+
+            for (int y = 0; y < 25; y++)
+            {
+                for (int x = 0; x < 88; x++)
+                {
+
+                    char c = (char)fileStream.Read();
+                    if (c == '\r')
+                    {
+                        c = (char)fileStream.Read();
+                    }
+
+                    if (c == '\n')
+                    {
+                        c = (char)fileStream.Read();
+                    }
+
+                    gameOverGrid[x, y] = new MapSpace();
+                    gameOverGrid[x, y].Value = c;
+                    gameOverGrid[x, y].IsVisited = false;
+                }
+            }
+
+            string[] lines = new string[25];
+
+            for (int y = 0; y < 25; y++)
+            {
+                for (int x = 0; x < 88; x++)
+                {
+                    lines[y] += gameOverGrid[x, y].Value;
+                }
+            }
+
+            return lines;
+        }
     }
 }
