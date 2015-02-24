@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,8 +17,11 @@ namespace Amazed
             Win
         }
 
-
+        private static string[] soundPaths = new string[] { "Audio/pickup.wav", "Audio/open.wav", "Audio/win.wav" };
+        private static SoundPlayer[] soundPlayers = new SoundPlayer[] { new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1]), new SoundPlayer(soundPaths[1])}
         private Game game;
+        private SoundPlayer soundPlayer;
+
         public int x, y;
 
         private int keys = 0;
@@ -44,7 +48,7 @@ namespace Amazed
             switch (sound)
             {
                 case Sounds.Open:
-
+                    soundPlayer.Play();
                     break;
                 case Sounds.PickUp:
 
