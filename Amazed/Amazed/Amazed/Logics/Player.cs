@@ -9,6 +9,14 @@ namespace Amazed
 {
     public class Player
     {
+        private enum Sounds
+        {
+            PickUp,
+            Open,
+            Win
+        }
+
+
         private Game game;
         public int x, y;
 
@@ -29,6 +37,24 @@ namespace Amazed
             game.keyLabel.Invoke(new Action(delegate() { game.keyLabel.Text = "k: " + keys; }));
             game.ReDraw();
         }
+
+
+        private void PlaySound(Sounds sound)
+        {
+            switch (sound)
+            {
+                case Sounds.Open:
+
+                    break;
+                case Sounds.PickUp:
+
+                    break;
+                case Sounds.Win:
+
+                    break;
+            }
+        }
+
 
 
         private bool CheckMove(char target, int xAttempt, int yAttampt)
@@ -53,7 +79,7 @@ namespace Amazed
                     }
                     else if (target == MapCharacters.Exit)
                     {
-                        // TODO end the game
+                        game.GameOver();
                     }
                     return true;
                 }

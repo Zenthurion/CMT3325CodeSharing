@@ -16,8 +16,17 @@ namespace Amazed
 {
     public partial class Game : Form
     {
+
+        public enum GameState
+        {
+            Playing,
+            GameOver
+        }
+
+
         public Map map;
         public Player p1;
+        public GameState state = GameState.Playing;
 
         public bool isPlaying = true;
         public float fps = 6f;
@@ -66,7 +75,15 @@ namespace Amazed
 
         public void ReDraw()
         {
-            textBox2.Invoke(new Action(delegate() { textBox2.Lines = map.GetMapLines(p1.x, p1.y); }));
+            if (isPlaying)
+            {
+                textBox2.Invoke(new Action(delegate() { textBox2.Lines = map.GetMapLines(p1.x, p1.y); }));
+            }
+        }
+
+        public void GameOver()
+        {
+            
         }
 
 
@@ -87,6 +104,7 @@ namespace Amazed
                 case Keys.W:
 
                 case Keys.Up:
+                    Console.WriteLine("Moving North");
                     movingNorth = true;
                     break;
                 case Keys.S:
